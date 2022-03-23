@@ -1,0 +1,53 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-10 offset-1">
+    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+        <h3 class="col-12 text-success text-center"><strong>Login</strong></h3>
+        <div class="row px-0 mx-0">
+            @foreach (var provider in Model.ExternalLogins)
+            {
+                @if (provider.Name.ToLower().Contains("facebook"))
+                {
+                            <button type="submit" class="text-white btn facebook-btn form-control" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab fa-facebook-square"></i> Singn Up With @provider.DisplayName</button>
+                }
+                else if (provider.Name.ToLower().Contains("micro"))
+                {
+                            <button type="submit" class="text-white btn btn-block microsoft-btn form-control" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab fa-windows"></i> Singn Up With @provider.DisplayName</button>
+                }
+            }
+        </div>
+    </form>
+    <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
+        <p class="text-center">OR</p>
+        <div class="form-group py-1">
+            <input type="email" asp-for="Input.Email" autofocus="" placeholder="Email" class="form-control" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group py-1">
+            <input type="password" asp-for="Input.Password" placeholder="Password" class="form-control" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+        <div class="checkbox">
+            <label role="button" asp-for="Input.RememberMe" class="form-label">
+                <input class="form-check-input" asp-for="Input.RememberMe" />
+                @Html.DisplayNameFor(m => m.Input.RememberMe)
+            </label>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group py-1">
+            <button type="submit" class="btn btn-success form-control"><i class="fas fa-sign-in-alt"></i> Sign In </button>
+        </div>
+        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+        <a asp-page="Register" type="submit" class="btn btn-primary form-control"><i class="fas fa-user-plus"></i> Register</a>
+    </form>
+</div>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

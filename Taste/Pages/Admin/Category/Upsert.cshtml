@@ -1,0 +1,53 @@
+﻿@page
+@model Taste.Pages.Admin.Category.UpsertModel
+
+
+<form method="post" asp-action="Upset">
+    <div class="container">
+        <div class="row px-2 mx-2 border backgroundWhite">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-12 px-3">
+                <h2 class="text-primary">@(Model.CategoryObj.Id != 0 ? "Update": "Create") Category</h2>
+            </div>
+            <div class="col-8 px-3">
+                <div class="row form-group p-3">
+                    <div class="col-3">
+                        <label asp-for="CategoryObj.Name"></label>
+                    </div>
+                    <div class="col-9">
+                        <input asp-for="CategoryObj.Name" class="form-control" />
+                        <span class="text-danger" asp-validation-for="CategoryObj.Name"></span>
+                    </div>
+                </div>
+
+                 <div class="row form-group p-3">
+                    <div class="col-3">
+                        <label asp-for="CategoryObj.DisplayOrder"></label>
+                    </div>
+                    <div class="col-9">
+                        <input asp-for="CategoryObj.DisplayOrder" class="form-control" />
+                        <span class="text-danger" asp-validation-for="CategoryObj.DisplayOrder"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group p-3">
+                    <div class="col-9 offset-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-primary form-control" asp-page="./Index">Back To List</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-success form-control">@(Model.CategoryObj.Id != 0 ? "Update": "Create")</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @if (Model.CategoryObj.Id != 0)
+    {
+        <input type="hidden" asp-for="CategoryObj.Id" />
+    }
+</form>

@@ -1,0 +1,143 @@
+﻿@page
+@model Taste.Pages.Customer.Carts.SummaryModel
+@using Microsoft.Extensions.Options
+@inject IOptions<Taste.Utility.StripeSetting> Stripe
+
+
+@if (Model.OrderDetailsCartVM.CartList.Count > 0)
+{
+    <form method="post">
+        <br />
+        <div class="backgroundWhiteBorder">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header bg-dark text-light ml-0 row container">
+                        <div class="col-6">
+                            <i class="fa fa-shopping-cart"></i> &nbsp;
+                            Order Summary
+                        </div>
+                        <div class="col-6 text-end">
+                            <a asp-page="Index" class="btn btn-outline-info btn-sm">Back to Cart</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="container rounded p-2">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 pb-4">
+                                    <div class="row">
+                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-info">PickUp Details:</span>
+                                        </h4>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label asp-for="OrderDetailsCartVM.OrderHeader.PickName"></label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input asp-for="OrderDetailsCartVM.OrderHeader.PickName" id="txtName" class="form-control" />
+                                            <span class="text-danger" asp-validation-for="OrderDetailsCartVM.OrderHeader.PickName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label asp-for="OrderDetailsCartVM.OrderHeader.PickUpTime"></label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input asp-for="OrderDetailsCartVM.OrderHeader.PickUpTime" id="PickUpTime" class="form-control" />
+                                            <span class="text-danger" asp-validation-for="OrderDetailsCartVM.OrderHeader.PickUpTime"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label asp-for="OrderDetailsCartVM.OrderHeader.PickUpDate"></label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input asp-for="OrderDetailsCartVM.OrderHeader.PickUpDate" id="PickUpDate" class="form-control" />
+                                            <span class="text-danger" asp-validation-for="OrderDetailsCartVM.OrderHeader.PickUpDate"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label asp-for="OrderDetailsCartVM.OrderHeader.PhoneNumber"></label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input asp-for="OrderDetailsCartVM.OrderHeader.PhoneNumber" id="PhoneNumber" class="form-control" />
+                                            <span class="text-danger" asp-validation-for="OrderDetailsCartVM.OrderHeader.PhoneNumber"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label asp-for="OrderDetailsCartVM.OrderHeader.Comments"></label>
+                                        </div>
+                                        <div class="col-9">
+                                            <textarea asp-for="OrderDetailsCartVM.OrderHeader.Comments" id="Comments" style="height:100px" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-5 offset-lg-1">
+                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="text-info">Order Summary:</span>
+                                    </h4>
+                                    <ul class="list-group mb-3">
+                                        @foreach(var item in Model.OrderDetailsCartVM.CartList)
+                                        {
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>
+                                                    <h6 class="my-0">@item.MenuItem.Name</h6>
+                                                    <small class="text-muted">Quantity: @item.Count</small>
+                                                </div>
+                                                <span class="text-muted">$@(item.MenuItem.Price*item.Count)</span>
+                                            </li>
+                                        }
+                                        <li class="list-group-item d-flex justify-content-between bg-light">
+                                            <small class="text-info">Total (USD)</small>
+                                            <strong class="text-info">$@Model.OrderDetailsCartVM.OrderHeader.OrderTotal</strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-12 col-md-4 offset-md-8">
+                                @{
+                                    var orderTotalForStripe = Model.OrderDetailsCartVM.OrderHeader.OrderTotal*100;
+                                }
+                                <script src="https://checkout.stripe.com/checkout.js"
+                                        class="stripe-button d-none"
+                                        data-key="@Stripe.Value.PublishableKey"
+                                        data-amount="@orderTotalForStripe"
+                                        data-label = "Place Order"
+                                        data-name="Taste Restaurant"
+                                        data-locale="auto"
+                                        data-allow-remember-me="false"
+                                        data-image="@Model.OrderDetailsCartVM.CartList[0].MenuItem.Image">
+                                </script>
+                                <script>document.getElementsByClassName('stripe-button-el')[0].style.display='none'</script>
+                                <button type="submit" value="Place Order" class="btn btn-success form-control">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input asp-for="OrderDetailsCartVM.OrderHeader.UserId" hidden />
+    </form>
+}else
+    {
+        <div class="card-header ml-0 row container">
+            <div class="col-6">
+                <h2>Please add items to shopping cart.</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-page="../Home/Index" class="btn btn-outline-danger btn-sm">Continue Shopping</a>
+            </div>
+        </div>
+    }
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

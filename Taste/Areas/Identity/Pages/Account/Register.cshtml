@@ -1,0 +1,104 @@
+﻿@page
+@model RegisterModel
+@using Taste.Utility
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row form-group">
+        <div class="col-8 offset-2">
+            <div class="card">
+                <div class="card-body px-lg-5 pt-4">
+                    <form method="post" autocomplete="off" asp-route-returnUrl="@Model.ReturnUrl">
+                        <h3 class="col-12 text-success text-center"><strong>Sign Up</strong></h3>
+                        <hr />
+                        <div class="form-row py-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" asp-for="Input.FirstName" placeholder="First Name" class="form-control" />
+                                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" asp-for="Input.LastName" placeholder="Last Name" class="form-control" />
+                                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="py-2">
+                                <div>
+                                    <input type="email" asp-for="Input.Email" placeholder="Email" class="form-control" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="py-2">
+                                <div>
+                                    <input type="text" asp-for="Input.PhoneNumber" placeholder="Phone Number" class="form-control" />
+                                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="py-2">
+                                <div>
+                                    <input type="password" asp-for="Input.Password" placeholder="Password" class="form-control" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="py-2">
+                                <div>
+                                    <input type="password" asp-for="Input.ConfirmPassword" placeholder="Confirm Password" class="form-control" />
+                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row p-2">
+                                <div class="col-md-3 col-sm-6">
+                                    <input id="customerRole" name="rdUserRole" type="radio" value="@SD.CustomerRole" />
+                                    <label for="customerRole">@SD.CustomerRole</label>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <input id="managerRole" name="rdUserRole" type="radio" value="@SD.ManagerRole" />
+                                    <label for="managerRole">@SD.ManagerRole</label>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <input id ="frontRole" name="rdUserRole" type="radio" value="@SD.FrontDeskRole" />
+                                    <label for="frontRole">@SD.FrontDeskRole</label>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <input id="kitchenRole" name="rdUserRole" type="radio" value="@SD.KitchenRole" />
+                                    <label for="kitchenRole">@SD.KitchenRole</label>
+                                </div>
+                            </div>
+                            <div class="my-2">
+                                <button type="submit" class="btn btn-primary form-control">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <p>
+                            By clicking <em>Register</em> you agree to our <a href="" target="_blank">terms of services</a>
+                        </p>
+                        <hr />
+                        <div class="row">
+                            @foreach (var provider in Model.ExternalLogins)
+                            {
+                                <div class="col-6">
+                                    @if (provider.Name.ToLower().Contains("facebook"))
+                                    {
+                                        <button type="submit" class="text-white btn facebook-btn form-control" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab fa-facebook-square"></i> Singn Up With @provider.DisplayName</button>
+                                    }
+                                    else if(provider.Name.ToLower().Contains("micro"))
+                                    {
+                                        <button type="submit" class="text-white btn btn-block microsoft-btn form-control" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab fa-windows"></i> Singn Up With @provider.DisplayName</button>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

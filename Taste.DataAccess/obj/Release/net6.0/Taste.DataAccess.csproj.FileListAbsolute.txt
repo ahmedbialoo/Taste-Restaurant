@@ -1,0 +1,30 @@
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.DataAccess.deps.json
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.DataAccess.dll
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.DataAccess.pdb
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.Models.dll
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.Models.pdb
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.csproj.AssemblyReference.cache
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.AssemblyInfoInputs.cache
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.AssemblyInfo.cs
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.csproj.CopyComplete
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.dll
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\refint\Taste.DataAccess.dll
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.pdb
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.DataAccess\obj\Release\net6.0\ref\Taste.DataAccess.dll
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.DataAccess.deps.json
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.DataAccess.dll
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.DataAccess.pdb
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.Models.dll
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\bin\Release\net6.0\Taste.Models.pdb
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.csproj.AssemblyReference.cache
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.AssemblyInfoInputs.cache
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.AssemblyInfo.cs
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.csproj.CopyComplete
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.dll
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\refint\Taste.DataAccess.dll
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\Taste.DataAccess.pdb
+C:\Users\ahmed\Desktop\Taste\Taste.DataAccess\obj\Release\net6.0\ref\Taste.DataAccess.dll

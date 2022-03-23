@@ -1,0 +1,24 @@
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\bin\Release\net6.0\Taste.Utility.deps.json
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\bin\Release\net6.0\Taste.Utility.dll
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\bin\Release\net6.0\Taste.Utility.pdb
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.csproj.AssemblyReference.cache
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.AssemblyInfoInputs.cache
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.AssemblyInfo.cs
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.dll
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\refint\Taste.Utility.dll
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.pdb
+C:\Users\ahmed\Desktop\New folder\Taste\Taste.Utility\obj\Release\net6.0\ref\Taste.Utility.dll
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\bin\Release\net6.0\Taste.Utility.deps.json
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\bin\Release\net6.0\Taste.Utility.dll
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\bin\Release\net6.0\Taste.Utility.pdb
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.csproj.AssemblyReference.cache
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.AssemblyInfoInputs.cache
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.AssemblyInfo.cs
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.dll
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\refint\Taste.Utility.dll
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\Taste.Utility.pdb
+C:\Users\ahmed\Desktop\Taste\Taste.Utility\obj\Release\net6.0\ref\Taste.Utility.dll

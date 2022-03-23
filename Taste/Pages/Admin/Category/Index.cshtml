@@ -1,0 +1,33 @@
+﻿@page
+@using Taste.Utility
+
+@if (User.IsInRole(SD.ManagerRole))
+{
+    
+<div class="border p-4 container bg-light">
+    <div class="row">
+        <div class="col-6">
+            <h2>Category List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" asp-page="Upsert"> <i class="fas fa-plus"></i>&nbsp; Creat New</a>
+        </div>
+    </div>
+    <br /><br />
+    <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Display Order</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts{
+    <script src="~/js/category.js"></script>
+}
+}else{
+    <h1 class="text-danger">Access Denied</h1>
+}

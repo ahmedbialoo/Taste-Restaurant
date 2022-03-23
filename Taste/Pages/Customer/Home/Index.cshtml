@@ -1,0 +1,42 @@
+﻿@page
+@model Taste.Pages.Customer.Home.IndexModel
+@{
+}
+
+@foreach(var category in Model.categories)
+{
+    if (Model.menuItems.Where(n => n.CategoryId == category.Id).Count()>0)
+    {
+        <div class="row container backgroundWhite">
+            <div class="col-12">
+                <div class="row">
+                    <h2 class="text-success">@category.Name</h2>
+                </div>
+                <div class="col-12">
+                    <div class="row p-3">
+                        @foreach (var menuItem in Model.menuItems.Where(i=>i.CategoryId==category.Id))
+                        {
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card"  style="border-radius:5px; border:2px solid #0d6efd">
+                                    <div class="px-3 py-1 text-center">
+                                        <h3 class="card-title text-primary"><b>@menuItem.Name</b></h3>
+                                    </div>
+                                    <div class="d-flex justify-content-between form-control">
+                                        <div class="col-6 badge bg-warning text-center" style="font-size:15px; display:table;">
+                                            <b style="display:table-cell;vertical-align:middle;">
+                                                @menuItem.Category.Name 
+                                            </b>
+                                        </div>
+                                        <div class="col-6 text-end h3" style="color:maroon;"><b>@menuItem.Price</b></div>
+                                    </div>
+                                    <img src="@menuItem.Image" class="p-2" />
+                                    <a asp-page="Details" class="btn btn-primary" style="border-radius:2px" asp-route-id="@menuItem.Id">Details</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+} 

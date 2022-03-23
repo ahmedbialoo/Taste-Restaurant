@@ -1,0 +1,91 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor accessor
+@using Taste.Utility
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Taste</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Taste.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/datatables/datatables.min.css" />
+    <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="~/font/css/all.css" />
+    <link rel="stylesheet" href="~/lib/toastr/build/toastr.css"/>
+    <link rel="stylesheet" href="~/lib/jquery-timepicker/jquery.timepicker.min.css"/>
+</head>
+<body style="background-color:#eee">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand text-white" asp-area="" asp-page="/Index">Taste</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        @if(User.IsInRole(SD.ManagerRole)){
+
+                            <li class="nav-item">
+                                <div class="btn-group" role="group">
+                                    <a href="#" id="navbarDropdown" class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" asp-page="/Admin/Category/Index">Category</a>
+                                        <a class="dropdown-item" asp-page="/Admin/FoodType/Index">Food Type</a>
+                                        <a class="dropdown-item" asp-page="/Admin/MenuItem/Index">Menu Items</a>
+                                        <a class="dropdown-item" asp-page="/Admin/Users/Index">Users</a>
+                                    </div>
+                                 </div>
+                            </li>
+                        }
+                        @{
+                            var count = accessor.HttpContext.Session.GetInt32(SD.ShoppingCart);
+                            if( count > 0){
+                                <li >
+                                    <a asp-page="/Customer/Carts/Index" class="nav-link text-danger">
+                                        <i class="fa-solid fa-cart-shopping"></i> <span class="text-white">(@(count))</span> 
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li >
+                                    <a href="#" class="nav-link text-white">
+                                        <i class="fa-solid fa-cart-shopping"></i> 0
+                                    </a>
+                                </li>    
+                            }
+                          }
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/lib/toastr/toastr.js"></script>
+    <script src="~/lib/sweet-alert/sweetalert2.all.min.js"></script>
+    <script src="~/lib/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="~/lib/jquery-timepicker/jquery.timepicker.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
